@@ -1,11 +1,7 @@
-
-
-
-
 <div style="background: linear-gradient(to bottom, #2c6d8f, #ffffff); width: 100%; padding: 20px 0 0 0;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; color: white;">
     <div style="display: flex; align-items: center;">
-      <img src="logo%20alongé%202.png" alt="Logo SO HAM" style="width: 200px; margin-left: 60px; margin-right: 90px;">
+      <img src="logosoham.png" alt="Logo SO HAM" style="width: 200px; margin-left: 60px; margin-right: 90px;">
       <div style="margin-left: 20px;">
         <h1 style="margin: 0 0 5px 0; font-size: 28px; padding-left: 0px; color: white;">Cie So Ham</h1>
         <p style="margin: 0; font-size: 18px;">Spectacles tout public et familiaux : musique, chant, conte, théâtre...</p>
@@ -64,30 +60,30 @@
     Des spectacles intergénérationnels qui séduisent autant les petits que les grands !
   </p>
 
- <div style="display: flex; justify-content: space-between; margin-top: 40px;">
- <div style="width: 48%; text-align: center;">
-    <div style="background-color: #D3D3D3; width: 100%; height: 315px; display: flex; justify-content: center; align-items: center;">
-      <span style="color: #808080;">Vidéo YouTube</span>
-    </div>
-    <h3 style="color: #3d7ea0; margin-top: 10px;">KÉTO ou la recherche du Silence</h3>
-    <p style="color: #FF7F00;">conte très musical</p>
-    <ul style="list-style-type: none; padding-left: 0; color: #4A4A4A;">
-      <li>° Tout public à partir de 5 ans</li>
-      <li>° Tout public à partir de 3 ans</li>
-    </ul>
-  </div>
-  <div style="width: 48%; text-align: center;">
-    <div style="background-color: #D3D3D3; width: 100%; height: 315px; display: flex; justify-content: center; align-items: center;">
-      <span style="color: #808080;">Vidéo YouTube</span>
-    </div>
-    <h3 style="color: #3d7ea0; margin-top: 10px;">MAMATISSÉ</h3>
-    <p style="color: #FF7F00;">Berceuses pour tous les âges</p>
-    <ul style="list-style-type: none; padding-left: 0; color: #4A4A4A;">
-      <li>° Plus de 5 ans</li>
-      <li>° Moins de 5 ans</li>
-    </ul>
-  </div>
-</div>
+  <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+    <div style="width: 48%; text-align: center;">
+       <div style="background-color: #D3D3D3; width: 100%; height: 315px;">
+         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5nPeMso1Lxw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+       <h3 style="color: #3d7ea0; margin-top: 10px;">KÉTO ou la recherche du Silence</h3>
+       <p style="color: #FF7F00;">conte très musical</p>
+       <ul style="list-style-type: none; padding-left: 0; color: #4A4A4A;">
+         <li>° Tout public à partir de 5 ans</li>
+         <li>° Tout public à partir de 3 ans</li>
+       </ul>
+     </div>
+     <div style="width: 48%; text-align: center;">
+       <div style="background-color: #D3D3D3; width: 100%; height: 315px;">
+         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0yglekyKpnw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+       <h3 style="color: #3d7ea0; margin-top: 10px;">MAMATISSÉ</h3>
+       <p style="color: #FF7F00;">Berceuses pour tous les âges</p>
+       <ul style="list-style-type: none; padding-left: 0; color: #4A4A4A;">
+         <li>° Plus de 5 ans</li>
+         <li>° Moins de 5 ans</li>
+       </ul>
+     </div>
+   </div>
 
   <p style="text-align: center; margin-top: 40px; font-size: 18px; color: #3d7ea0;">
     La compagnie So Ham propose également des voyages sonores<br>
@@ -122,20 +118,22 @@
         La Cie So Ham s'adresse à tout type de public, chaque âge ayant sa porte d'entrée vers l'émerveillement ! L'adulte peut renouer avec son enfant intérieur et l'enfant consolider son plaisir et sa confiance d'être. La douceur et le rire sont aussi deux aspects importants pour entrer en état d'écoute, pour se laisser emporter, dépasser ses barrières mentales et entrer dans un ressenti simple et vivant...
       </p>
     </div>
+  
     <div style="display: flex; justify-content: center; margin-top: 30px; margin-bottom: 60px;">
-  <a href="javascript:void(0);" onclick="window.open('nousavonsjouela.html', 'JoueLaPopup', 'width=600,height=400,resizable=yes,scrollbars=yes')" style="
-    text-decoration: none;
-    background-color: #FFA500;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  ">
-    Nous avons joué là
-  </a>
+      <a href="nousavonsjouela.html" style="
+        text-decoration: none;
+        background-color: #FFA500;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      ">
+        Nous avons joué là
+      </a>
+    </div>
 </div>
   </div>
 
@@ -174,7 +172,7 @@
       <p style="margin: 0; font-size: 16px;">Compagnie associée à Lez'Arts collectif</p>
     </div>
     <div style="flex: 1; text-align: center;">
-      <img src="Logo Lezarts noir.png" alt="Logo LEZ'ARTS" style="width: 150px; background-color: white; padding: 10px; border-radius: 5px;">
+      <img src="logolezarts.png" alt="Logo LEZ'ARTS" style="width: 150px; background-color: white; padding: 10px; border-radius: 5px;">
     </div>
     <div style="flex: 1; text-align: right;">
   <a href="contact.html" style="
@@ -193,5 +191,3 @@
 </div>
   </div>
 </div>
-
-Ajout de la page d'accueil
