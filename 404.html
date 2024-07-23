@@ -1,3 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page non trouvée</title>
+    <script type="text/javascript">
+        // Liste des redirections
+        const redirects = {
+            "/about-4-1": "/",
+            "/about-4": "/",
+            "/contactez-nous": "/",
+            "/massages-sonores": "/",
+            "/agenda": "/",
+            "/contactez-nous": "/",
+            "/contactez-nous": "/",
+            "/contactez-nous": "/",
+            // Ajoutez d'autres redirections ici
+        };
+
+        // Obtenez le chemin de l'URL actuelle
+        const path = window.location.pathname;
+
+        // Vérifiez si le chemin actuel doit être redirigé
+        if (redirects[path]) {
+            window.location.href = redirects[path];
+        }
+    </script>
+</head>
+<body>
+    <h1>Page non trouvée</h1>
+    <p>La page que vous cherchez n'existe pas. Vous allez être redirigé.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
