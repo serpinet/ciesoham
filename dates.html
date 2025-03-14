@@ -61,26 +61,58 @@
 
 <div class="container">
   <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">DATES DE JEUX</h2>
-  <div class="color-code">
-    <p>Code couleur :</p>
-    <p><strong class="bleu-keto">Kéto</strong></p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong></p>
-    <p><strong class="vert-sons">sons < SILENCE > Sons</strong></p>
+  
   </div>
-  <div class="dates-list">
-    <p><strong>Kéto</strong> : 7 décembre, à la Roche St Secret (26)</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 14 décembre, 2 représentations au Tiers-lieu Le Parc à Dieulefit (26)</p>
-    <p><strong class="vert-sons">sons < SILENCE > Sons</strong> : 2 novembre, à la yourte CERCLE DE VIE (07)
-    <p><strong class="vert-sons">Comment gérer l'effervescence mentale ?</strong>
-    <p><strong>Kéto</strong> : 20 décembre, 2 représentations au théâtre les quinconces de vals les bains (07)</p>
-    <p><strong class="bordeaux-mamatisse">Rencontres Enchantées</strong> : 18 décembre, EHPAD de L'Horme (42 )
-    <p><strong>Kéto</strong> : 20 décembre, 2 représentations au théâtre les quinconces de vals les bains (07)</p>
-    <p><strong>Kéto</strong> : 28 et 29 décembre, 4 représentations  au théâtre charité de Carpentras (84)</p>
-    <p></p>
-    <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">2025</h2>
-  <div class="dates-list">
+  <div class="dates-list" id="dynamicDates">
+    <!-- Contenu dynamique -->
+  </div>
+</div>
 
-    <p><strong class="bleu-keto">Kéto</strong> : 24 mai 2025, Isle d’Abeau (38)</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  Papa.parse("DATES.csv", {
+    download: true,
+    header: true,
+    complete: function(results) {
+      const container = document.getElementById('dynamicDates');
+      
+      results.data.forEach(row => {
+        const p = document.createElement('p');
+        const strong = document.createElement('strong');
+        
+        // Applique la classe CSS selon la couleur
+        switch(row.Couleur) {
+          case 'bleu-keto':
+            strong.className = 'bleu-keto';
+            break;
+          case 'bordeaux-mamatisse':
+            strong.className = 'bordeaux-mamatisse';
+            break;
+          case 'vert-sons':
+            strong.className = 'vert-sons';
+            break;
+        }
+
+        strong.textContent = row.Titre;
+        
+        // Construction du contenu
+        let content = ` : ${row.Date}`;
+        if(row.Description) content += `, ${row.Description}`;
+        
+        p.appendChild(strong);
+        p.innerHTML += content;
+        
+        container.appendChild(p);
+      });
+    },
+    error: function(err) {
+      console.error('Erreur de chargement CSV:', err);
+    }
+  });
+});
+</script>
+  
   </div>
 </div>
 
