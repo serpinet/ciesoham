@@ -80,38 +80,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  Papa.parse("nousavons2025.csv", {
+  const container = document.getElementById('dynamicDates');
+
+  Papa.parse('nousavons2025.csv', {
     download: true,
     header: true,
+    skipEmptyLines: true,
     complete: function(results) {
-      const container = document.getElementById('dynamicDates');
-      
+      console.log(results.data);
+
       results.data.forEach(row => {
+        if (!row.Titre && !row.Date) return;
+
         const p = document.createElement('p');
         const strong = document.createElement('strong');
-        
-        // Applique la classe CSS selon la couleur
-        switch(row.Couleur) {
-          case 'bleu-keto':
-            strong.className = 'bleu-keto';
-            break;
-          case 'bordeaux-mamatisse':
-            strong.className = 'bordeaux-mamatisse';
-            break;
-          case 'vert-sons':
-            strong.className = 'vert-sons';
-            break;
-        }
 
-        strong.textContent = row.Titre;
-        
-        // Construction du contenu
-        let content = ` : ${row.Date}`;
-        if(row.Description) content += `, ${row.Description}`;
-        
+        if (row.Couleur === 'bleu-keto') strong.className = 'bleu-keto';
+        if (row.Couleur === 'bordeaux-mamatisse') strong.className = 'bordeaux-mamatisse';
+        if (row.Couleur === 'vert-sons') strong.className = 'vert-sons';
+
+        strong.textContent = row.Titre || '';
         p.appendChild(strong);
-        p.innerHTML += content;
-        
+
+        const texte = document.createTextNode(` : ${row.Date || ''}${row.Description ? ', ' + row.Description : ''}`);
+        p.appendChild(texte);
+
         container.appendChild(p);
       });
     },
