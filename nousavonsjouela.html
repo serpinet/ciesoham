@@ -169,41 +169,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  Papa.parse("nousavons2025.csv", {  // sans ./ 
-    download: true,
-    header: true,
-    complete: function(results) {
-      const container = document.getElementById('dynamicDates');
+  const container = document.getElementById('dynamicDates');
+  
+  // Test 1 : charge le CSV et affiche son contenu brut
+  fetch('nousavons2025.csv')
+    .then(r => {
+      if (!r.ok) throw new Error('404 ou erreur réseau : ' + r.status);
+      return r.text();
+    })
+    .then(csvText => {
+      console.log('CONTENU BRUT CSV :', csvText);
       
-      results.data.forEach(row => {
-        const p = document.createElement('p');
-        const strong = document.createElement('strong');
-        
-        switch(row.Couleur) {
-          case 'bleu-keto':
-            strong.className = 'bleu-keto';
-            break;
-          case 'bordeaux-mamatisse':
-            strong.className = 'bordeaux-mamatisse';
-            break;
-          case 'vert-sons':
-            strong.className = 'vert-sons';
-            break;
+      // Test 2 : parse le CSV
+      Papa.parse(csvText, {
+        header: true,
+        complete: function(results) {
+          console.log('CSV parsé :', results.data);
+          
+          // Affiche dans la page
+          results.data.forEach((row, i) => {
+            const p = document.createElement('p');
+            p.textContent = `Ligne ${i}: ${JSON.stringify(row)}`;
+            container.appendChild(p);
+          });
         }
-
-        strong.textContent = row.Titre;
-        let content = ` : ${row.Date}`;
-        if(row.Description) content += `, ${row.Description}`;
-        
-        p.appendChild(strong);
-        p.innerHTML += content;
-        
-        container.appendChild(p);
       });
-    },
-    error: function(err) {
-      console.error('Erreur de chargement CSV:', err);
-    }
-  });
+    })
+    .catch(err => {
+      const p = document.createElement('p');
+      p.textContent = 'ERREUR : ' + err.message;
+      p.style.color = 'red';
+      container.appendChild(p);
+      console.error(err);
+    });
 });
 </script>
