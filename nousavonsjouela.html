@@ -1,12 +1,6 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
 
-  .thin-text {
-    font-weight: 300;
-    color: #333333;
-    text-align: center;
-  }
-
   body {
     font-family: 'Kanit', sans-serif;
     margin: 0;
@@ -22,29 +16,10 @@
     padding: 20px;
   }
 
-  h1, h2, h3 {
-    color: #1e90ff;
-    text-align: center;
-  }
-
-  .orange-text {
-    color: #FF7F00;
-  }
-
-  .dates-list {
+  h2 {
     color: #3d7ea0;
-    font-size: 18px;
-    margin-top: 20px;
-    font-style: italic;
+    margin-top: 10px;
     text-align: center;
-  }
-
-  .dates-list strong {
-    font-style: normal;
-  }
-
-  .dates-list p {
-    margin: 10px 0;
   }
 
   .color-code {
@@ -56,6 +31,18 @@
 
   .color-code p {
     margin: 5px 0;
+  }
+
+  .dates-list {
+    color: #3d7ea0;
+    font-size: 18px;
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .dates-list p {
+    margin: 10px 0;
   }
 
   .bleu-keto {
@@ -72,7 +59,7 @@
 </style>
 
 <div class="container">
-  <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">Nous avons joué là</h2>
+  <h2>Nous avons joué là</h2>
 
   <div class="color-code">
     <p>Code couleur :</p>
@@ -81,12 +68,10 @@
     <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong></p>
   </div>
 
-  <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">2025</h2>
-  <div class="dates-list" id="dynamicDates">
-    <!-- Contenu dynamique -->
-  </div>
+  <h2>2025</h2>
+  <div class="dates-list" id="dynamicDates"></div>
 
-  <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">2024</h2>
+  <h2>2024</h2>
   <div class="dates-list">
     <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 30 janvier, rencontres enchantées EHPAD de L'Horme (42)</p>
     <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 31 janvier et 1er février, au Festival Tête de mioche à Espace culturel La Buire à L'Horme (42)</p>
@@ -106,7 +91,7 @@
     <p><strong class="bleu-keto">Kéto</strong> : 28 et 29 décembre, 4 représentations au festival Noël insolite de Carpentras (84)</p>
   </div>
 
-  <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">2023</h2>
+  <h2>2023</h2>
   <div class="dates-list">
     <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 4 février, à la yourte CERCLE DE VIE (07)</p>
     <p><strong class="bleu-keto">Kéto</strong> : 15 mars, à la MJC Nini Chaize</p>
@@ -134,7 +119,7 @@
     <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 23 décembre, à la yourte CERCLE DE VIE (07)</p>
   </div>
 
-  <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">2022</h2>
+  <h2>2022</h2>
   <div class="dates-list">
     <p><strong class="bleu-keto">Kéto</strong> : 09 avril, au festival des pieds et des mains Pailharès (07)</p>
     <p><strong class="bleu-keto">Kéto</strong> : 04 mai, 2 séances chez l'habitant à Piégros-la-Clastre (26)</p>
@@ -151,7 +136,7 @@
     <p><strong class="bleu-keto">Kéto</strong> : 11 décembre, au comité des fêtes de Marignac-en-Diois (26)</p>
   </div>
 
-  <h2 style="color: #3d7ea0; margin-top: 10px; text-align: center;">2020-21</h2>
+  <h2>2020-21</h2>
   <div class="dates-list">
     <p><strong class="bleu-keto">Kéto</strong> : juin 2020, à école de St Félicien (07)</p>
     <p><strong class="bleu-keto">Kéto</strong> : septembre 2020, chez l'habitant à Piégros-la-Clastre (26)</p>
@@ -167,39 +152,35 @@
   </div>
 </div>
 
-<div style="display: flex; justify-content: center; margin-top: 30px; margin-bottom: 60px;">
+<div style="display:flex; justify-content:center; margin-top:30px; margin-bottom:60px;">
   <a href="javascript:void(0);" onclick="history.back();" style="
-    text-decoration: none;
-    background-color: #FFA500;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  ">
-    Retour
-  </a>
+    text-decoration:none;
+    background-color:#FFA500;
+    color:white;
+    padding:10px 20px;
+    border-radius:25px;
+    font-weight:bold;
+    font-size:18px;
+    text-transform:uppercase;
+    box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
+  ">Retour</a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('dynamicDates');
-  if (!container) {
-    console.error('dynamicDates introuvable');
-    return;
-  }
+  if (!container) return;
 
   Papa.parse('./nousavons2025.csv', {
     download: true,
     header: true,
     skipEmptyLines: true,
+    transformHeader: h => h.trim(),
     complete: function(results) {
-      results.data.forEach(row => {
-        if (!row.Titre && !row.Date) return;
+      const rows = results.data.filter(row => row && (row.Titre || row.Date));
 
+      rows.forEach(row => {
         const p = document.createElement('p');
         const strong = document.createElement('strong');
 
@@ -211,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
         strong.textContent = row.Titre || '';
         p.appendChild(strong);
         p.appendChild(document.createTextNode(` : ${row.Date || ''}${row.Description ? ', ' + row.Description : ''}`));
-
         container.appendChild(p);
       });
     },
