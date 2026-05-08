@@ -169,29 +169,35 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('dynamicDates');
-  if (!container) return;
-
-  Papa.parse('./nousavons2025.csv', {
+  Papa.parse("nousavons2025.csv", {  // sans ./ 
     download: true,
     header: true,
-    skipEmptyLines: true,
-    transformHeader: h => h.trim(),
     complete: function(results) {
-      const rows = results.data.filter(row => row && (row.Titre || row.Date));
-
-      rows.forEach(row => {
+      const container = document.getElementById('dynamicDates');
+      
+      results.data.forEach(row => {
         const p = document.createElement('p');
         const strong = document.createElement('strong');
+        
+        switch(row.Couleur) {
+          case 'bleu-keto':
+            strong.className = 'bleu-keto';
+            break;
+          case 'bordeaux-mamatisse':
+            strong.className = 'bordeaux-mamatisse';
+            break;
+          case 'vert-sons':
+            strong.className = 'vert-sons';
+            break;
+        }
 
-        const couleur = (row.Couleur || '').trim();
-        if (couleur === 'bleu-keto') strong.className = 'bleu-keto';
-        else if (couleur === 'bordeaux-mamatisse') strong.className = 'bordeaux-mamatisse';
-        else if (couleur === 'vert-sons') strong.className = 'vert-sons';
-
-        strong.textContent = row.Titre || '';
+        strong.textContent = row.Titre;
+        let content = ` : ${row.Date}`;
+        if(row.Description) content += `, ${row.Description}`;
+        
         p.appendChild(strong);
-        p.appendChild(document.createTextNode(` : ${row.Date || ''}${row.Description ? ', ' + row.Description : ''}`));
+        p.innerHTML += content;
+        
         container.appendChild(p);
       });
     },
