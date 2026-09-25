@@ -68,101 +68,53 @@
   <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong></p>
   </div>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  
-    // Cette zone existe déjà dans ton HTML :
-    // <div class="dates-list" id="dynamicDates"></div>
-    const container = document.getElementById('dynamicDates');
-  
-    // Petite fonction : charge un CSV et l'interprète.
-    function chargerCSV(nomFichier) {
-      return fetch(nomFichier)
-        .then(function (reponse) {
-          if (!reponse.ok) {
-            throw new Error('Impossible de charger ' + nomFichier);
-          }
-          return reponse.text();
-        })
-        .then(function (texteCSV) {
-          return new Promise(function (resolve) {
-            Papa.parse(texteCSV, {
-              header: true,
-              skipEmptyLines: true,
-              complete: function (resultats) {
-                resolve(resultats.data);
-              }
-            });
-          });
-        });
-    }
-  
-    // Charge d'abord 2026, puis 2025.
-    Promise.all([
-      chargerCSV('nousavons2026.csv'),
-      chargerCSV('nousavons2025.csv')
-    ])
-    .then(function (resultats) {
-  
-      const dates2026 = resultats[0];
-      const dates2025 = resultats[1];
-  
-      // Affiche le titre 2026.
-      const titre2026 = document.createElement('h2');
-      titre2026.textContent = '2026';
-      container.appendChild(titre2026);
-  
-      // Affiche toutes les lignes du CSV 2026.
-      dates2026.forEach(function (ligne) {
-        afficherLigne(ligne);
-      });
-  
-      // Affiche le titre 2025.
-      const titre2025 = document.createElement('h2');
-      titre2025.textContent = '2025';
-      container.appendChild(titre2025);
-  
-      // Affiche toutes les lignes du CSV 2025.
-      dates2025.forEach(function (ligne) {
-        afficherLigne(ligne);
-      });
-    })
-    .catch(function (erreur) {
-      const messageErreur = document.createElement('p');
-      messageErreur.textContent = 'Erreur : ' + erreur.message;
-      messageErreur.style.color = 'red';
-      container.appendChild(messageErreur);
-      console.error(erreur);
-    });
-  
-    // Fabrique une ligne lisible à partir d'une ligne du CSV :
-    // Titre,Date,Description,Couleur
-    function afficherLigne(ligne) {
-      const p = document.createElement('p');
-  
-      const titre = document.createElement('strong');
-      titre.textContent = ligne.Titre || '';
-      titre.className = ligne.Couleur || '';
-  
-      p.appendChild(titre);
-  
-      // Ajoute : " : 29 mai, festival..."
-      const texte = ' : ' + (ligne.Date || '') +
-        (ligne.Description ? ', ' + ligne.Description : '');
-  
-      p.appendChild(document.createTextNode(texte));
-  
-      container.appendChild(p);
-    }
-  
-  });
-  </script>
-  
-  
   <h2>2025</h2>
   <div class="dates-list" id="dynamicDates"></div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  Papa.parse("nousavons2025.csv", {
+  download: true,
+  header: true,
+  complete: function(results) {
+  const container = document.getElementById('dynamicDates');
+  results.data.forEach(row => {
+  const p = document.createElement('p');
+  const strong = document.createElement('strong');
+  // Applique la classe CSS selon la couleur
+  switch(row.Couleur) {
+  case 'bleu-keto':
+  strong.className = 'bleu-keto';
+  break;
+  case 'bordeaux-mamatisse':
+  strong.className = 'bordeaux-mamatisse';
+  break;
+  case 'vert-sons':
+  strong.className = 'vert-sons';
+  break;
+  }
+  
+  strong.textContent = row.Titre;
+  // Construction du contenu
+  let content = ` : ${row.Date}`;
+  if(row.Description) content += `, ${row.Description}`;
+  p.appendChild(strong);
+  p.innerHTML += content;
+  container.appendChild(p);
+  });
+  },
+  error: function(err) {
+  console.error('Erreur de chargement CSV:', err);
+  }
+  });
+  });
+  </script>
+  </div>
+  </div>
+  
+  
+  
   
   <h2>2024</h2>
   <div class="dates-list">
@@ -294,4 +246,5 @@
   });
   });
   </script>
+  
   
