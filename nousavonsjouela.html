@@ -1,263 +1,297 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
-
+  
   body {
-    font-family: 'Kanit', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #333333;
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333333;
   }
-
+  
   .container {
-    max-width: 1200px;
-    color: #3d7ea0;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  color: #3d7ea0;
+  margin: 0 auto;
+  padding: 20px;
   }
-
+  
   h2 {
-    color: #3d7ea0;
-    margin-top: 10px;
-    text-align: center;
+  color: #3d7ea0;
+  margin-top: 10px;
+  text-align: center;
   }
-
+  
   .color-code {
-    color: #3d7ea0;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 18px;
+  color: #3d7ea0;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
   }
-
+  
   .color-code p {
-    margin: 5px 0;
+  margin: 5px 0;
   }
-
+  
   .dates-list {
-    color: #3d7ea0;
-    font-size: 18px;
-    margin-top: 20px;
-    font-style: italic;
-    text-align: center;
+  color: #3d7ea0;
+  font-size: 18px;
+  margin-top: 20px;
+  font-style: italic;
+  text-align: center;
   }
-
+  
   .dates-list p {
-    margin: 10px 0;
+  margin: 10px 0;
   }
-
+  
   .bleu-keto {
-    color: #3d7ea0;
+  color: #3d7ea0;
   }
-
+  
   .bordeaux-mamatisse {
-    color: #B25671;
+  color: #B25671;
   }
-
+  
   .vert-sons {
-    color: #3DA9A0;
+  color: #3DA9A0;
   }
-</style>
-
-<div class="container">
+  </style>
+  
+  <div class="container">
   <h2>Nous avons joué là</h2>
-
+  
   <div class="color-code">
-    <p>Code couleur :</p>
-    <p><strong class="bleu-keto">KÉTO</strong></p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong></p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong></p>
+  <p>Code couleur :</p>
+  <p><strong class="bleu-keto">KÉTO</strong></p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong></p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong></p>
   </div>
-
-  <!-- On renomme visuellement la section pour refléter le nouveau comportement -->
-  <h2>Dates récentes (2026, 2025, puis autres)</h2>
-  <div class="dates-list" id="dynamicDates"></div>
-
-  <h2>2024</h2>
-  <div class="dates-list">
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 30 janvier, rencontres enchantées EHPAD de L'Horme (42)</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 31 janvier et 1er février, au Festival Tête de mioche à Espace culturel La Buire à L'Horme (42)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 15 février, séance scolaire à Montéléger (26)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 7 février, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 6 avril, festival des pieds et des mains (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 11 avril, séance scolaire à Cléon d'Andran (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 4 mai, école d'Allex (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 6 et 20 juillet, camping Huttopia de Dieulefit (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 3 et 17 août, camping Huttopia de Dieulefit (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 9 août, au Lac d'Isarlès (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 7 décembre, à la Roche St Secret (26)</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 14 décembre, 2 représentations au Tiers-lieu Le Parc à Dieulefit (26)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 2 novembre, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 20 décembre, 2 représentations au théâtre les quinconces de Vals-les-Bains (07)</p>
-    <p><strong class="vert-sons">Rencontres Enchantées</strong> : 18 décembre, EHPAD de L'Horme (42)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 28 et 29 décembre, 4 représentations au festival Noël insolite de Carpentras (84)</p>
-  </div>
-
-  <h2>2023</h2>
-  <div class="dates-list">
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 4 février, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 15 mars, à la MJC Nini Chaize</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 16 et 17 mars, résidence et tournage teaser au PlatO, Romans (26)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 18 mars, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 23, 24, 25 avril, résidence à l'Espace culturel La Buire à L'Horme (42)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 13 mai, à la fête de la médiathèque de Bourdeaux (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 14 mai, au festival d'une cour à l'autre à Villeneuve de Berg</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 22 avril, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 16 mai, au festival printemps au théâtre Saillans (26)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 3 juin, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 08 juillet, au Cabaret Sauvage au Teil (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 8 dates dans les campings Huttopia en juillet et août (26, 13 et 07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : du 23 au 27 août, au Festival DEHORS à Bourg-lès-Valence (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 02 septembre, à FESTIMOS à Étables (07)</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 26 et 27 septembre, au PlatO, Romans (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 07 octobre, à la bergerie de la vallée de Quint (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 14 octobre, au Tiers-lieu le Parc à Dieulefit (26)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 21 octobre, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 27 novembre, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : évènement intergénérationnel école/ Ehpad à La-Baume-de-Transit (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 13 décembre, à la mairie de Fabrègues (34)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 15 décembre, 2 séances scolaires dans l'Oise (95)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 22 décembre, séance scolaire en sud Ardèche (07)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 23 décembre, à la yourte CERCLE DE VIE (07)</p>
-  </div>
-
-  <h2>2022</h2>
-  <div class="dates-list">
-    <p><strong class="bleu-keto">Kéto</strong> : 09 avril, au festival des pieds et des mains Pailharès (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 04 mai, 2 séances chez l'habitant à Piégros-la-Clastre (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 11 mai, à la mairie de MANZIAT</p>
-    <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 16, 17 et 18 mai, résidence à l’Espace culturel La Buire à L'Horme (42)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 19 juin, à L'Art du soi à Valence (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 13 août, à la main heureuse, matériauthèque Cléon d'Andran (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 28 août, à la Colombine, Crest (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 15 septembre, au ZE FIESTIVAL Marsanne (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 09 octobre, à la MJC LIVRON (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 15 octobre, à la bibliothèque de Saillans (26)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 23 octobre, à la yourte CERCLE DE VIE (07) / 03 décembre, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 06 décembre, à l’école Anne Pierjean à Crest (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 11 décembre, au comité des fêtes de Marignac-en-Diois (26)</p>
-  </div>
-
-  <h2>2020-21</h2>
-  <div class="dates-list">
-    <p><strong class="bleu-keto">Kéto</strong> : juin 2020, à école de St Félicien (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : septembre 2020, chez l'habitant à Piégros-la-Clastre (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 10 décembre, au périscolaire Piégros (26)</p>
-    <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 9 octobre 2021, à la yourte CERCLE DE VIE (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 26 et 27 octobre 2021, résidence le PlatO + tournage teaser, Romans (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 23 octobre 2021, la bulle à trucs Cléon d'Andran (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 6 décembre 2021, à la maison de quartier St Nicolas, Romans (26)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 8 décembre 2021, au point commun, Tournon (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 10 décembre 2021 à Francheville / grandes terres</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 07 juin 2021, à école maternelle St Félicien (07)</p>
-    <p><strong class="bleu-keto">Kéto</strong> : 18 novembre 2021, école en Ardèche (07)</p>
-  </div>
-</div>
-
-<div style="display:flex; justify-content:center; margin-top:30px; margin-bottom:60px;">
-  <a href="javascript:void(0);" onclick="history.back();" style="
-    text-decoration:none;
-    background-color:#FFA500;
-    color:white;
-    padding:10px 20px;
-    border-radius:25px;
-    font-weight:bold;
-    font-size:18px;
-    text-transform:uppercase;
-    box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
-  ">Retour</a>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('dynamicDates');
-
-  // === À ADAPTER SELON TON CSV ===
-  // Nom exact de la colonne qui contient la date dans les CSV
-  const DATE_COLUMN = 'date'; // ex. 'date', 'Date', 'date_spectacle', etc.
-
-  // Format de date dans le CSV : 'JJ/MM/AAAA' ou 'AAAA-MM-JJ', etc.
-  // Ici on suppose JJ/MM/AAAA. Si c'est différent, dis-le-moi et j'ajusterai.
-  function parseDateFR(dateStr) {
-    if (!dateStr) return null;
-    const parts = String(dateStr).trim().split('/');
-    if (parts.length !== 3) return null;
-    const [day, month, year] = parts;
-    const d = new Date(+year, +month - 1, +day);
-    if (isNaN(d.getTime())) return null;
-    return d;
-  }
-
-  function loadCSV(url) {
-    return fetch(url)
-      .then(r => {
-        if (!r.ok) throw new Error('Erreur chargement ' + url + ' : ' + r.status);
-        return r.text();
-      })
-      .then(csvText => {
-        return new Promise((resolve, reject) => {
-          Papa.parse(csvText, {
-            header: true,
-            skipEmptyLines: true,
-            complete: results => resolve(results.data),
-            error: err => reject(err)
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  
+    // Cette zone existe déjà dans ton HTML :
+    // <div class="dates-list" id="dynamicDates"></div>
+    const container = document.getElementById('dynamicDates');
+  
+    // Petite fonction : charge un CSV et l'interprète.
+    function chargerCSV(nomFichier) {
+      return fetch(nomFichier)
+        .then(function (reponse) {
+          if (!reponse.ok) {
+            throw new Error('Impossible de charger ' + nomFichier);
+          }
+          return reponse.text();
+        })
+        .then(function (texteCSV) {
+          return new Promise(function (resolve) {
+            Papa.parse(texteCSV, {
+              header: true,
+              skipEmptyLines: true,
+              complete: function (resultats) {
+                resolve(resultats.data);
+              }
+            });
           });
         });
+    }
+  
+    // Charge d'abord 2026, puis 2025.
+    Promise.all([
+      chargerCSV('nousavons2026.csv'),
+      chargerCSV('nousavons2025.csv')
+    ])
+    .then(function (resultats) {
+  
+      const dates2026 = resultats[0];
+      const dates2025 = resultats[1];
+  
+      // Affiche le titre 2026.
+      const titre2026 = document.createElement('h2');
+      titre2026.textContent = '2026';
+      container.appendChild(titre2026);
+  
+      // Affiche toutes les lignes du CSV 2026.
+      dates2026.forEach(function (ligne) {
+        afficherLigne(ligne);
       });
-  }
-
-  Promise.all([
-    loadCSV('nousavons2026.csv'),
-    loadCSV('nousavons2025.csv')
-  ])
-  .then(([data2026, data2025]) => {
-    // Fusionne les deux tableaux
-    const allData = [...data2026, ...data2025];
-
-    // Ajoute une date parsée à chaque ligne (pour le tri)
-    const withDates = allData.map(row => {
-      const dateObj = parseDateFR(row[DATE_COLUMN]);
-      return { row, dateObj };
+  
+      // Affiche le titre 2025.
+      const titre2025 = document.createElement('h2');
+      titre2025.textContent = '2025';
+      container.appendChild(titre2025);
+  
+      // Affiche toutes les lignes du CSV 2025.
+      dates2025.forEach(function (ligne) {
+        afficherLigne(ligne);
+      });
+    })
+    .catch(function (erreur) {
+      const messageErreur = document.createElement('p');
+      messageErreur.textContent = 'Erreur : ' + erreur.message;
+      messageErreur.style.color = 'red';
+      container.appendChild(messageErreur);
+      console.error(erreur);
     });
-
-    // Trie : d'abord par année décroissante (2026, 2025, autres),
-    // puis par date décroissante à l'intérieur de chaque année.
-    withDates.sort((a, b) => {
-      const yearA = a.dateObj ? a.dateObj.getFullYear() : 0;
-      const yearB = b.dateObj ? b.dateObj.getFullYear() : 0;
-
-      // Priorité aux années les plus récentes
-      if (yearA !== yearB) {
-        return yearB - yearA;
-      }
-
-      // Même année : tri par date décroissante
-      if (!a.dateObj && !b.dateObj) return 0;
-      if (!a.dateObj) return 1;
-      if (!b.dateObj) return -1;
-      return b.dateObj - a.dateObj;
-    });
-
-    // Affichage dans la page
-    withDates.forEach(item => {
-      const row = item.row;
+  
+    // Fabrique une ligne lisible à partir d'une ligne du CSV :
+    // Titre,Date,Description,Couleur
+    function afficherLigne(ligne) {
       const p = document.createElement('p');
-
-      // Ici, on suppose que tu as une colonne "texte" ou similaire.
-      // À adapter selon tes colonnes réelles.
-      // Exemple si tu as une colonne "texte" contenant tout le libellé :
-      const texte = row['texte'] || JSON.stringify(row);
-
-      p.innerHTML = texte; // ou p.textContent = texte;
+  
+      const titre = document.createElement('strong');
+      titre.textContent = ligne.Titre || '';
+      titre.className = ligne.Couleur || '';
+  
+      p.appendChild(titre);
+  
+      // Ajoute : " : 29 mai, festival..."
+      const texte = ' : ' + (ligne.Date || '') +
+        (ligne.Description ? ', ' + ligne.Description : '');
+  
+      p.appendChild(document.createTextNode(texte));
+  
       container.appendChild(p);
-    });
+    }
+  
+  });
+  </script>
+  
+  
+  <h2>2025</h2>
+  <div class="dates-list" id="dynamicDates"></div>
+  
+  <h2>2024</h2>
+  <div class="dates-list">
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 30 janvier, rencontres enchantées EHPAD de L'Horme (42)</p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 31 janvier et 1er février, au Festival Tête de mioche à Espace culturel La Buire à L'Horme (42)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 15 février, séance scolaire à Montéléger (26)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 7 février, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 6 avril, festival des pieds et des mains (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 11 avril, séance scolaire à Cléon d'Andran (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 4 mai, école d'Allex (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 6 et 20 juillet, camping Huttopia de Dieulefit (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 3 et 17 août, camping Huttopia de Dieulefit (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 9 août, au Lac d'Isarlès (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 7 décembre, à la Roche St Secret (26)</p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 14 décembre, 2 représentations au Tiers-lieu Le Parc à Dieulefit (26)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 2 novembre, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 20 décembre, 2 représentations au théâtre les quinconces de Vals-les-Bains (07)</p>
+  <p><strong class="vert-sons">Rencontres Enchantées</strong> : 18 décembre, EHPAD de L'Horme (42)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 28 et 29 décembre, 4 représentations au festival Noël insolite de Carpentras (84)</p>
+  </div>
+  
+  <h2>2023</h2>
+  <div class="dates-list">
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 4 février, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 15 mars, à la MJC Nini Chaize</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 16 et 17 mars, résidence et tournage teaser au PlatO, Romans (26)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 18 mars, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 23, 24, 25 avril, résidence à l'Espace culturel La Buire à L'Horme (42)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 13 mai, à la fête de la médiathèque de Bourdeaux (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 14 mai, au festival d'une cour à l'autre à Villeneuve de Berg</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 22 avril, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 16 mai, au festival printemps au théâtre Saillans (26)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 3 juin, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 08 juillet, au Cabaret Sauvage au Teil (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 8 dates dans les campings Huttopia en juillet et août (26, 13 et 07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : du 23 au 27 août, au Festival DEHORS à Bourg-lès-Valence (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 02 septembre, à FESTIMOS à Étables (07)</p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 26 et 27 septembre, au PlatO, Romans (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 07 octobre, à la bergerie de la vallée de Quint (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 14 octobre, au Tiers-lieu le Parc à Dieulefit (26)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 21 octobre, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 27 novembre, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : évènement intergénérationnel école/ Ehpad à La-Baume-de-Transit (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 13 décembre, à la mairie de Fabrègues (34)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 15 décembre, 2 séances scolaires dans l'Oise (95)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 22 décembre, séance scolaire en sud Ardèche (07)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 23 décembre, à la yourte CERCLE DE VIE (07)</p>
+  </div>
+  
+  <h2>2022</h2>
+  <div class="dates-list">
+  <p><strong class="bleu-keto">Kéto</strong> : 09 avril, au festival des pieds et des mains Pailharès (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 04 mai, 2 séances chez l'habitant à Piégros-la-Clastre (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 11 mai, à la mairie de MANZIAT</p>
+  <p><strong class="bordeaux-mamatisse">MAMATISSÉ</strong> : 16, 17 et 18 mai, résidence à l’Espace culturel La Buire à L'Horme (42)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 19 juin, à L'Art du soi à Valence (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 13 août, à la main heureuse, matériauthèque Cléon d'Andran (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 28 août, à la Colombine, Crest (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 15 septembre, au ZE FIESTIVAL Marsanne (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 09 octobre, à la MJC LIVRON (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 15 octobre, à la bibliothèque de Saillans (26)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 23 octobre, à la yourte CERCLE DE VIE (07) / 03 décembre, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 06 décembre, à l’école Anne Pierjean à Crest (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 11 décembre, au comité des fêtes de Marignac-en-Diois (26)</p>
+  </div>
+  
+  <h2>2020-21</h2>
+  <div class="dates-list">
+  <p><strong class="bleu-keto">Kéto</strong> : juin 2020, à école de St Félicien (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : septembre 2020, chez l'habitant à Piégros-la-Clastre (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 10 décembre, au périscolaire Piégros (26)</p>
+  <p><strong class="vert-sons">sons &lt;SILENCE&gt; Sons</strong> : 9 octobre 2021, à la yourte CERCLE DE VIE (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 26 et 27 octobre 2021, résidence le PlatO + tournage teaser, Romans (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 23 octobre 2021, la bulle à trucs Cléon d'Andran (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 6 décembre 2021, à la maison de quartier St Nicolas, Romans (26)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 8 décembre 2021, au point commun, Tournon (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 10 décembre 2021 à Francheville / grandes terres</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 07 juin 2021, à école maternelle St Félicien (07)</p>
+  <p><strong class="bleu-keto">Kéto</strong> : 18 novembre 2021, école en Ardèche (07)</p>
+  </div>
+  </div>
+  
+  <div style="display:flex; justify-content:center; margin-top:30px; margin-bottom:60px;">
+  <a href="javascript:void(0);" onclick="history.back();" style="
+  text-decoration:none;
+  background-color:#FFA500;
+  color:white;
+  padding:10px 20px;
+  border-radius:25px;
+  font-weight:bold;
+  font-size:18px;
+  text-transform:uppercase;
+  box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
+  ">Retour</a>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('dynamicDates');
+  // Test 1 : charge le CSV et affiche son contenu brut
+  fetch('nousavons2025.csv')
+  .then(r => {
+  if (!r.ok) throw new Error('404 ou erreur réseau : ' + r.status);
+  return r.text();
+  })
+  .then(csvText => {
+  console.log('CONTENU BRUT CSV :', csvText);
+  // Test 2 : parse le CSV
+  Papa.parse(csvText, {
+  header: true,
+  complete: function(results) {
+  console.log('CSV parsé :', results.data);
+  // Affiche dans la page
+  results.data.forEach((row, i) => {
+  const p = document.createElement('p');
+  p.textContent = `Ligne ${i}: ${JSON.stringify(row)}`;
+  container.appendChild(p);
+  });
+  }
+  });
   })
   .catch(err => {
-    const p = document.createElement('p');
-    p.textContent = 'ERREUR : ' + err.message;
-    p.style.color = 'red';
-    container.appendChild(p);
-    console.error(err);
+  const p = document.createElement('p');
+  p.textContent = 'ERREUR : ' + err.message;
+  p.style.color = 'red';
+  container.appendChild(p);
+  console.error(err);
   });
-});
-</script>
+  });
+  </script>
+  
