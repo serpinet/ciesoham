@@ -72,46 +72,48 @@
   <div class="dates-list" id="dynamicDates"></div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  Papa.parse("nousavons2025.csv", {
-  download: true,
-  header: true,
-  complete: function(results) {
+<script>
+document.addEventListener('DOMContentLoaded', function () {
   const container = document.getElementById('dynamicDates');
-  results.data.forEach(row => {
-  const p = document.createElement('p');
-  const strong = document.createElement('strong');
-  // Applique la classe CSS selon la couleur
-  switch(row.Couleur) {
-  case 'bleu-keto':
-  strong.className = 'bleu-keto';
-  break;
-  case 'bordeaux-mamatisse':
-  strong.className = 'bordeaux-mamatisse';
-  break;
-  case 'vert-sons':
-  strong.className = 'vert-sons';
-  break;
-  }
-  
-  strong.textContent = row.Titre;
-  // Construction du contenu
-  let content = ` : ${row.Date}`;
-  if(row.Description) content += `, ${row.Description}`;
-  p.appendChild(strong);
-  p.innerHTML += content;
-  container.appendChild(p);
+
+  Papa.parse('nousavons2026.csv', {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function (results) {
+      // Affiche un titre 2026
+      const titre = document.createElement('h2');
+      titre.textContent = '2026';
+      container.appendChild(titre);
+
+      // Pour chaque ligne du CSV
+      results.data.forEach(function (ligne) {
+        const p = document.createElement('p');
+
+        const strong = document.createElement('strong');
+        strong.textContent = ligne.Titre || '';
+        strong.className = ligne.Couleur || '';
+
+        p.appendChild(strong);
+
+        const texte = ' : ' + (ligne.Date || '') +
+          (ligne.Description ? ', ' + ligne.Description : '');
+
+        p.appendChild(document.createTextNode(texte));
+
+        container.appendChild(p);
+      });
+    },
+    error: function (err) {
+      const p = document.createElement('p');
+      p.textContent = 'Erreur : ' + err.message;
+      p.style.color = 'red';
+      container.appendChild(p);
+      console.error(err);
+    }
   });
-  },
-  error: function(err) {
-  console.error('Erreur de chargement CSV:', err);
-  }
-  });
-  });
-  </script>
-  </div>
-  </div>
+});
+</script>
   
   
   
